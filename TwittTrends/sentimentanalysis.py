@@ -13,7 +13,7 @@ q = sqs.get_queue_by_name(QueueName='harsh-test')
 
 snsClient = boto3.client('sns', region_name="us-east-2")
 
-host = "search-elasticsearch-host-nsrtl4hvxiz3ln6cjll3pz2jsm.us-east-2.es.amazonaws.com"
+host = "enter elastic search domain "
 port = 443
 
 #create ElasticSearch object
@@ -45,7 +45,7 @@ def getSQSQueue(n):
         doc["sentiment"] = text(blob.sentiment.polarity)
 
 
-        response = snsClient.publish(TopicArn='arn:aws:sns:us-east-2:074003739425:Chaljaaa',
+        response = snsClient.publish(TopicArn='topic arn',
                                      Message= json.dumps(doc),
                                      MessageAttributes = {
 

@@ -8,10 +8,10 @@ import time
 import json
 
 
-con_key = "j6vAL8V7bVU72dVHX9DgFfUQt"
-con_secret = "ZKOYpM2vbetPaxNckdVl5dVZug9jeO9HJ1Mh23VOGvEldWQ0aF"
-acess_token = "114146024-GkTsqVFirnoIuY18WrAhbBt1ibkVSqvHuGT3Hnqw"
-acess_secret = "DloDTQ80ABWdQS2SJfWMqgDwTrWSWrWZC2FS15EsQ7ocU"
+c_key = "consumer key"
+c_secret = "secret"
+a_token = "acess token"
+a_secret = "access secret"
 
 sqs = boto3.resource('sqs', region_name="us-east-2")
 
@@ -54,8 +54,8 @@ class listener(StreamListener):
 
     
 
-auth = OAuthHandler(con_key, con_secret)
-auth.set_access_token(acess_token, acess_secret)
+auth = OAuthHandler(c_key, c_secret)
+auth.set_access_token(a_token, a_secret)
 
 twitterStream = Stream(auth, listener())
 terms = [

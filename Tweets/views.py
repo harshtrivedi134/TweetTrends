@@ -14,8 +14,8 @@ from django.views.decorators.csrf import csrf_protect, csrf_exempt
 import urllib3
 # Create your views here.
 
-host = 'search-elasticsearch-host-nsrtl4hvxiz3ln6cjll3pz2jsm.us-east-2.es.amazonaws.com' #Creata a domain on ElasticSearch Service and add the endpoint here
-awsauth = AWS4Auth('AKIAJA7IOGST3LOLM42A', 'wycf7XJwBP8DtwCHTr7UdVbxt6H5Z8bXT9nGLKxb', 'us-east-2', 'es')
+host = 'enter host' #Creata a domain on ElasticSearch Service and add the endpoint here
+awsauth = AWS4Auth('key1', 'key2', 'us-east-2', 'es')
 es = elasticsearch.Elasticsearch(
     hosts=[{'host': host, 'port': 443}],
     http_auth=awsauth,
@@ -49,10 +49,10 @@ def notifications(request):
 @csrf_protect
 def home(request):
     # import twitter keys and tokens
-    # ckey = "tNfiEOxKdJnYwl5hIESxg5u4p"
-    # csecret = "FkxWm2hmrykXB9yQk0V05pkc71gl7SiX1KvH8GHm5i9e3tdaO7"
-    # atoken = "855645693977010176-AoKIElvaLFbCXjQdkeA6bqflN6XTDKq"
-    # asecret = "jLv1lPvdCgqNSteuSdCkilAYVHnHfedaySnJpzcSlmHAU"
+    # ckey = "consumer api key"
+    # csecret = "consumer secret"
+    # atoken = "access token"
+    # asecret = "access secret"
 
     # create instance of elasticsearch
 
@@ -121,8 +121,8 @@ def home(request):
 
 def geodist(request, *args, **kwargs):
     # create instance of elasticsearch
-    host = 'search-elasticsearch-host-nsrtl4hvxiz3ln6cjll3pz2jsm.us-east-2.es.amazonaws.com' #Creata a domain on ElasticSearch Service and add the endpoint here
-    awsauth = AWS4Auth('AKIAJA7IOGST3LOLM42A', 'wycf7XJwBP8DtwCHTr7UdVbxt6H5Z8bXT9nGLKxb', 'us-east-2', 'es')
+    host = 'enter elastic search host' #Creata a domain on ElasticSearch Service and add the endpoint here
+    awsauth = AWS4Auth('key1', 'key2', 'us-east-2', 'es')
     es = elasticsearch.Elasticsearch(
         hosts=[{'host': host, 'port': 443}],
         http_auth=awsauth,
